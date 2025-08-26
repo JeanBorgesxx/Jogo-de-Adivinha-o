@@ -1,0 +1,129 @@
+/* Fundo */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #333;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+/* Título */
+h1 {
+  color: #2563eb;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Texto explicativo */
+p {
+  font-size: 1.2rem;
+}
+
+/* Input */
+input {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #2563eb;
+  outline: none;
+  text-align: center;
+  background: white;
+  color: #333;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+}
+
+/* Botões */
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  background-color: #2563eb;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Mensagem principal */
+#mensagem {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #111;
+}
+
+/* Tentativas */
+#tentativas {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Histórico de palpites */
+.historico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* Caixinhas dos palpites */
+.palpite-box {
+  background: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.palpite-box:hover {
+  transform: scale(1.05);
+  background: #1d4ed8;
+}
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  background: #f1f5f9;
+  border-top: 2px solid #e2e8f0;
+  font-size: 14px;
+  color: #475569;
+}
+
+footer .social-links {
+  margin-bottom: 10px;
+}
+
+footer .social-links a {
+  margin: 0 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+footer .social-links a:hover {
+  opacity: 0.8;
+}
+
+footer .social-links a:nth-child(1) { background: #0a66c2; color: white; }   /* LinkedIn */
+footer .social-links a:nth-child(2) { background: #333; color: white; }      /* GitHub */
+footer .social-links a:nth-child(3) { background: #ea4335; color: white; }   /* Email */
