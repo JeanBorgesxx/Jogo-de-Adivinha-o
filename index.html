@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
   <meta charset="UTF-8">
   <title>Jogo de Adivinhação</title>
   <link rel="stylesheet" href="estilos.css">
-    <script src="script.js"></script>
-
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <h1>🎯 Jogo de Adivinhação</h1>
 
-    <h1>🎯 Jogo de Adivinhação</h1>
-    <p>O computador escolheu um número entre <b>1 e 100</b>. Tente adivinhar!</p>
+  <!-- Tela inicial -->
+  <div id="telaInicial">
+    <input type="text" id="nomeJogador" placeholder="Digite seu nome">
+    
+    <!-- Escolha de avatar -->
+    <h3>Escolha seu avatar:</h3>
+    <div class="avatares">
+      <label><input type="radio" name="avatar" value="🐱" checked> 🐱</label>
+      <label><input type="radio" name="avatar" value="🐶"> 🐶</label>
+      <label><input type="radio" name="avatar" value="🐵"> 🐵</label>
+      <label><input type="radio" name="avatar" value="🦊"> 🦊</label>
+      <label><input type="radio" name="avatar" value="🐲"> 🐲</label>
+    </div>
 
+    <h2>Escolha a dificuldade:</h2>
+    <div class="dificuldades">
+      <button onclick="iniciarJogo('facil')">😎 Fácil<br>(1-50 / 5 chances)</button>
+      <button onclick="iniciarJogo('medio')">😬 Médio<br>(1-100 / 10 chances)</button>
+      <button onclick="iniciarJogo('dificil')">🔥 Difícil<br>(1-200 / 15 chances)</button>
+    </div>
 
-    <!-- Campo de entrada do palpite -->
+    <h2>Ou jogue no modo especial:</h2>
+    <button class="cronometroBtn" onclick="iniciarJogo('cronometro')">⏱️ Modo Cronômetro (60s)</button>
+
+    <h2>🎨 Tema</h2>
+    <select id="tema" onchange="mudarTema(this.value)">
+      <option value="claro">🌞 Claro</option>
+      <option value="escuro">🌙 Escuro</option>
+      <option value="gamer">🎮 Gamer</option>
+      <option value="retro">🕹️ Retrô</option>
+    </select>
+  </div>
+
+  <!-- Tela do jogo -->
+  <div id="telaJogo" style="display: none;">
     <input type="number" id="palpite" placeholder="Digite seu chute">
     <button id="btnChutar" onclick="chutar()">Chutar</button>
     <button id="btnReiniciar" onclick="reiniciar()" style="display: none;">Reiniciar</button>
+    <button id="btnMudar" onclick="mudarDificuldade()">Mudar Dificuldade</button>
 
-
-    <!-- Mensagens do jogo -->
     <p id="mensagem"></p>
     <p id="tentativas"></p>
+    <p id="cronometro"></p>
+    <p id="dicas"></p>
     <p id="historico"></p>
-
-    
-    <!--Redes Sociais-->
-    <footer><br><br><br><br><br><br><br><br><br>
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/jean-borges-86b098271/" target="_blank">🔗 LinkedIn</a>
-    <a href="https://github.com/JeanBorgesxx" target="_blank">💻 GitHub</a>
-    <a href="mailto:jean_mborges@hotmail.com">✉️ Email</a>
   </div>
-  <p>© 2025 - JeanBorges - Todos os direitos reservados</p>
 
-</footer>
+  <!-- Ranking -->
+  <h2>🏆 Ranking</h2>
+  <div class="ranking-tabs">
+    <button onclick="trocarRanking('normal')">Modo Normal</button>
+    <button onclick="trocarRanking('cronometro')">Modo Cronômetro</button>
+  </div>
+  <table id="ranking">
+    <thead>
+      <tr>
+        <th>Posição</th>
+        <th>Avatar</th>
+        <th>Nome</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Redes Sociais -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/jean-borges-86b098271/" target="_blank">🔗 LinkedIn</a>
+      <a href="https://github.com/JeanBorgesxx" target="_blank">💻 GitHub</a>
+      <a href="mailto:jean_mborges@hotmail.com">✉️ Email</a>
+    </div>
+    <p>© 2025 - JeanBorges - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- Biblioteca de confete -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
 </html>
-
