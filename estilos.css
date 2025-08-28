@@ -97,33 +97,134 @@ button:hover {
   transform: scale(1.05);
   background: #1d4ed8;
 }
+
+/* Botões de dificuldade */
+.dificuldades {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.dificuldades button {
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+  width: 150px;
+}
+
+.dificuldades button:nth-child(1) { background: #16a34a; } /* Fácil - verde */
+.dificuldades button:nth-child(2) { background: #f59e0b; } /* Médio - laranja */
+.dificuldades button:nth-child(3) { background: #dc2626; } /* Difícil - vermelho */
+
+.dificuldades button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Ranking estilizado */
+#ranking {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+#ranking th, #ranking td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+#ranking th {
+  background: #2563eb;
+  color: white;
+}
+
+#ranking tr:nth-child(even) { background: #f9fafb; }
+#ranking tr:hover { background: #e0f2fe; }
+
+/* Faz o body usar flexbox e empurrar o footer pra baixo */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteúdo principal ocupa o espaço disponível */
+main {
+  flex: 1;
+}
+
+/* Rodapé fixo no final */
 footer {
-  margin-top: 50px;
   padding: 20px;
   text-align: center;
   background: #f1f5f9;
-  border-top: 2px solid #e2e8f0;
   font-size: 14px;
   color: #475569;
+
+  border-top: none;
+  width: 100%;
 }
 
 footer .social-links {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 footer .social-links a {
-  margin: 0 10px;
   padding: 8px 14px;
   border-radius: 8px;
-  text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  text-decoration: none;
 }
 
-footer .social-links a:hover {
-  opacity: 0.8;
-}
+footer .social-links a:nth-child(1) { background: #0a66c2; color: white; } 
+footer .social-links a:nth-child(2) { background: #333; color: white; }    
+footer .social-links a:nth-child(3) { background: #ea4335; color: white; } 
 
-footer .social-links a:nth-child(1) { background: #0a66c2; color: white; }   /* LinkedIn */
-footer .social-links a:nth-child(2) { background: #333; color: white; }      /* GitHub */
-footer .social-links a:nth-child(3) { background: #ea4335; color: white; }   /* Email */
+/* Dificuldades */
+.dificuldades { display: flex; gap: 15px; justify-content: center; }
+.dificuldades button { padding: 20px; font-size: 18px; border-radius: 12px; border: none; cursor: pointer; font-weight: bold; color: white; transition: 0.3s; width: 150px; }
+.dificuldades button:nth-child(1){background:#16a34a;}
+.dificuldades button:nth-child(2){background:#f59e0b;}
+.dificuldades button:nth-child(3){background:#dc2626;}
+.dificuldades button:hover{transform:scale(1.1);opacity:0.9;}
+.cronometroBtn{padding:15px 25px;background:#2563eb;color:#fff;font-size:18px;border-radius:10px;cursor:pointer;}
+.cronometroBtn:hover{background:#1d4ed8;}
+
+/* Avatares */
+.avatares label { font-size: 30px; cursor: pointer; margin: 0 10px; }
+
+/* Ranking */
+#ranking { margin:20px auto; border-collapse:collapse; width:80%; max-width:500px; box-shadow:0px 4px 10px rgba(0,0,0,0.1);}
+#ranking th, #ranking td { padding:12px; text-align:center; border-bottom:1px solid #ddd;}
+#ranking th { background:#2563eb; color:white;}
+#ranking tr:nth-child(even){background:#f9fafb;}
+#ranking tr:hover{background:#e0f2fe;}
+.ranking-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:10px;}
+.ranking-tabs button{padding:10px 15px;border:none;border-radius:8px;cursor:pointer;background:#2563eb;color:white;font-weight:bold;}
+.ranking-tabs button:hover{background:#1d4ed8;}
+
+/* Derrota efeito */
+.derrota { animation: piscar 0.5s infinite; }
+@keyframes piscar { 0%{background:red;} 100%{background:white;} }
+
+/* Temas */
+body.claro { background:#f3f4f6; color:#333; }
+body.escuro { background:#111; color:#eee; }
+body.gamer { background:#0f172a; color:#0ff; font-family:'Courier New', monospace; }
+body.retro { background:black; color:lime; font-family:'Press Start 2P', monospace; }
+
